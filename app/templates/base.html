@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>CRYPTO NEWS</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+
+  </head>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500&display=swap');
+</style>
+  <body style="font-family:Rajdhani,sans-serif;">
+
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="https://bulma.io">
+      <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
+    </a>
+
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item">
+        Home
+      </a>
+
+
+</div>
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <input class="input is-rounded is-primary" type="text" placeholder="Look up ">
+
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+<div style="background-color:#ccc; width:60%;margin:10px; margin-left:300px; min-height:250px;" class="box">
+  <h1 style="font-size:32px; padding:20px;">WELCOME TO CRYPTO NEWS MARKET</h1>
+  <h3 style="padding-left:20px;">Your source for upto the minute Crypto And BlockChain News!</h3>
+</div>
+<table style="margin:50px;" class=" table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+  <thead>
+    <tr >
+
+      <th>Name</th>
+      <th ><abbr >Price</abbr></th>
+      <th><abbr>symbol</abbr></th>
+      <th><abbr >1h percentage</abbr></th>
+      <th><abbr >24h percentage</abbr></th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for crypto in crypto_list %}
+    <tr>
+      <td>{{crypto.name}}</td>
+      <td>{{crypto.price}}</td>
+      <td>{{crypto.symbol}}</td>
+      <td>{{crypto.percentage1hr}}</td>
+      <td>{{crypto.percentage24h}}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+  </body>
+</html>
